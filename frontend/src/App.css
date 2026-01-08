@@ -1,0 +1,291 @@
+:root {
+    --azure-blue: #0078d4;
+    --azure-blue-hover: #106ebe;
+    --azure-blue-dark: #004578;
+    --azure-blue-light: #deecf9;
+    --bg-page: #faf9f8;
+    --bg-white: #ffffff;
+    --bg-hover: #f3f2f1;
+    --bg-selected: #edebe9;
+    --border-color: #e1dfdd;
+    --border-dark: #c8c6c4;
+    --text-primary: #323130;
+    --text-secondary: #605e5c;
+    --text-muted: #a19f9d;
+    --danger: #d13438;
+    --danger-hover: #a4262c;
+    --success: #107c10;
+    --warning: #ffaa44;
+    --critical: #d13438;
+    --high: #ff8c00;
+    --medium: #ffaa44;
+    --low: #107c10;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+    background: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    height: 48px;
+    background: var(--azure-blue-dark);
+    color: white;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+
+.tagline {
+    display: none;
+}
+
+.btn-primary {
+    background: var(--azure-blue);
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.1s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: var(--azure-blue-hover);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background: var(--bg-white);
+    color: var(--text-primary);
+    border: 1px solid var(--border-dark);
+    padding: 5px 16px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background 0.1s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--bg-hover);
+}
+
+.btn-danger {
+    background: transparent;
+    color: var(--danger);
+    border: 1px solid var(--danger);
+    padding: 5px 16px;
+    border-radius: 2px;
+    font-size: 14px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.1s ease;
+}
+
+.btn-danger:hover {
+    background: var(--danger);
+    color: white;
+}
+
+.app-main {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 240px 1fr 400px;
+    height: calc(100vh - 48px);
+    overflow: hidden;
+}
+
+.sidebar {
+    background: var(--bg-white);
+    border-right: 1px solid var(--border-color);
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.sidebar h3 {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    margin: 0 0 12px 0;
+    padding: 0 8px;
+}
+
+.filters {
+    margin-bottom: 24px;
+}
+
+.filter-group {
+    margin-bottom: 12px;
+}
+
+.filter-group label {
+    display: block;
+    font-size: 12px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    padding: 0 8px;
+}
+
+.filter-group select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 2px;
+    background: var(--bg-white);
+    color: var(--text-primary);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--azure-blue);
+}
+
+.stats {
+    background: var(--bg-page);
+    border-radius: 2px;
+    padding: 12px;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 8px;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.stat-value {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 13px;
+}
+
+.ticket-list-container {
+    overflow-y: auto;
+    background: var(--bg-page);
+    border-right: 1px solid var(--border-color);
+}
+
+.loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.ticket-detail-container {
+    overflow: hidden;
+    background: var(--bg-white);
+}
+
+.no-selection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: var(--bg-page);
+}
+
+.no-selection-content {
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.no-selection-content .icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 12px;
+    opacity: 0.4;
+}
+
+.no-selection-content p {
+    margin: 0;
+    font-size: 14px;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-dark);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+
+@media (max-width: 1200px) {
+    .app-main {
+        grid-template-columns: 200px 1fr 360px;
+    }
+}
+
+@media (max-width: 900px) {
+    .app-main {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .ticket-detail-container {
+        position: fixed;
+        top: 48px;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: 400px;
+        z-index: 50;
+        transform: translateX(100%);
+        transition: transform 0.2s ease;
+        box-shadow: -2px 0 8px rgba(0,0,0,0.1);
+    }
+    
+    .ticket-detail-container:has(.ticket-detail) {
+        transform: translateX(0);
+    }
+}

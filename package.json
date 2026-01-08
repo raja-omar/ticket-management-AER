@@ -1,0 +1,16 @@
+{
+  "name": "service-desk-lite",
+  "version": "1.0.0",
+  "description": "A lightweight internal ticketing system built with Azure Functions and React",
+  "private": true,
+  "scripts": {
+    "start:backend": "cd backend && func start",
+    "start:frontend": "cd frontend && npm run dev",
+    "deploy:backend": "cd backend && func azure functionapp publish omar-aer",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install"
+  },
+  "keywords": ["azure-functions", "react", "ticketing", "service-desk"],
+  "author": "Omar",
+  "license": "MIT"
+}
+
